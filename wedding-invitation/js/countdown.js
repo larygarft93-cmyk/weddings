@@ -4,7 +4,7 @@
   const minsEl = document.getElementById('cd-mins');
   if (!daysEl || !hoursEl || !minsEl) return;
 
-  const countDownDate = new Date('2026-09-19T17:30:00+06:00').getTime();
+  const countDownDate = new Date('2026-09-19T16:00:00+06:00').getTime();
 
   const updateCountdown = setInterval(function () {
     const now = new Date().getTime();
