@@ -5,9 +5,9 @@
 
 /* ---------- Динамический фон (плавно "дышит") ---------- */
 @keyframes bg-drift {
-    0%   { background-position: 42% -6%, 8% 14%, 0 0; }
-    50%  { background-position: 58% 10%, 24% 28%, 0 0; }
-    100% { background-position: 42% -6%, 8% 14%, 0 0; }
+    0%   { background-position: 42% -6%, 8% 14%, center center, 0 0; }
+    50%  { background-position: 58% 10%, 24% 28%, center center, 0 0; }
+    100% { background-position: 42% -6%, 8% 14%, center center, 0 0; }
 }
 @keyframes bg-pulse {
     0%, 100% { opacity: 0.85; }
@@ -20,10 +20,13 @@ body {
     background-image:
         radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.18), transparent 30%),
         radial-gradient(circle at 15% 20%, rgba(122, 74, 45, 0.10), transparent 28%),
+        url("../kyrgyz-wedding/assets/photos/DSC06073.jpg"),
         linear-gradient(180deg, #f8f3ea 0%, #f3ede2 32%, #f7f0e8 100%);
-    background-size: 180% 180%, 180% 180%, 100% 100%;
+    background-size: 180% 180%, 180% 180%, cover, 100% 100%;
     background-repeat: no-repeat;
     animation: bg-drift 34s ease-in-out infinite;
+    background-position: 42% -6%, 8% 14%, center center, 0 0;
+    background-attachment: scroll;
 }
 body::before {
     content: "";
@@ -36,6 +39,26 @@ body::before {
     pointer-events: none;
     z-index: 0;
     animation: bg-pulse 20s ease-in-out infinite;
+}
+
+/* Photo/background behavior for high-DPI and mobile */
+@media (min-resolution: 2dppx) {
+    body {
+        /* prefer higher-res image if available; browser will pick based on URL if you add 2x variants */
+        background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.18), transparent 30%), radial-gradient(circle at 15% 20%, rgba(122, 74, 45, 0.10), transparent 28%), url("../kyrgyz-wedding/assets/photos/DSC06073.jpg"), linear-gradient(180deg, #f8f3ea 0%, #f3ede2 32%, #f7f0e8 100%);
+        background-size: 180% 180%, 180% 180%, cover, 100% 100%;
+        background-position: 42% -6%, 8% 14%, center center, 0 0;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        /* On small screens keep background simple for performance and readability */
+        background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.14), transparent 28%), linear-gradient(180deg, #f8f3ea 0%, #f3ede2 36%, #f7f0e8 100%);
+        background-size: 160% 160%, 100% 100%;
+        animation: bg-drift 40s ease-in-out infinite;
+    }
+    body::before { opacity: 0.95; }
 }
 #main-content {
     position: relative;
