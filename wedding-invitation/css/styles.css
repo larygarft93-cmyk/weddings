@@ -309,14 +309,18 @@ body::-webkit-scrollbar {
 }
 .hero-word {
     display: inline-block;
+    position: relative;
+    z-index: 2;
     animation: riseIn 0.9s ease both;
 }
 .hero-word:nth-child(2) { animation-delay: 0.12s; }
 .hero-word:nth-child(3) { animation-delay: 0.24s; }
 .title-ornament {
     position: relative;
+    z-index: 2;
     display: inline-block;
     padding: 0 1rem;
+    line-height: 1;
 }
 .title-ornament::before,
 .title-ornament::after {
@@ -341,6 +345,14 @@ body::-webkit-scrollbar {
     50% { transform: scale(1.04); }
 }
 .hero-title {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    isolation: isolate;
     animation: pulseSoft 4s ease-in-out infinite;
 }
 
@@ -359,8 +371,8 @@ body::-webkit-scrollbar {
 @media (max-width: 420px) {
     .hero-title {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem 0.5rem;
+        flex-direction: column;
+        gap: 0.35rem;
         align-items: center;
         justify-content: center;
         white-space: normal;
@@ -369,13 +381,14 @@ body::-webkit-scrollbar {
         font-size: clamp(1.55rem, 7vw, 2.3rem) !important;
     }
     .hero-word {
-        display: inline-block;
+        display: block;
     }
     .title-ornament {
         margin: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        padding: 0;
     }
 }
 
@@ -385,8 +398,16 @@ body::-webkit-scrollbar {
         font-weight: 700;
         text-align: center;
 }
-.hero-title { display:block; }
-.hero-title .title-ornament { display:inline-block; margin:0 0.5rem; }
+@media (min-width: 768px) {
+    .hero-title {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+    .hero-word,
+    .title-ornament {
+        display: inline-block;
+    }
+}
 
 /* Gallery blurb styling and tighter spacing */
 .gallery-blurb { padding-top: 1.5rem; padding-bottom: 1.5rem; }
