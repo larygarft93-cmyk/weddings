@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#C5A059" stroke-width="2"/>
+  <circle cx="150" cy="150" r="130" fill="none" stroke="#58111A" stroke-width="1.5"/>
+  <g transform="translate(150,150)">
+    <g id="horn">
+      <path d="M 0,-30 C -20,-60 -50,-80 -50,-105 C -50,-125 -30,-135 -10,-115 C 5,-100 -5,-70 0,-30" fill="none" stroke="#58111A" stroke-width="3"/>
+      <path d="M 0,-30 C 20,-60 50,-80 50,-105 C 50,-125 30,-135 10,-115 C -5,-100 5,-70 0,-30" fill="none" stroke="#58111A" stroke-width="3"/>
+      <circle cx="0" cy="-85" r="5" fill="#C5A059"/>
+    </g>
+    <g transform="rotate(90)"><use href="#horn"/></g>
+    <g transform="rotate(180)"><use href="#horn"/></g>
+    <g transform="rotate(270)"><use href="#horn"/></g>
+    <circle cx="0" cy="0" r="22" fill="#58111A"/>
+    <circle cx="0" cy="0" r="16" fill="#C5A059"/>
+    <circle cx="0" cy="0" r="6" fill="#FAF6EE"/>
+  </g>
+</svg>

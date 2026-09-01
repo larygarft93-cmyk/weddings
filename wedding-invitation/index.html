@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ky">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Эрланбек &amp; Карлыгач — Wedding Invitation</title>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/tailwind-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<link rel="preload" as="image" href="../kyrgyz-wedding/assets/photos/DSC05912%20(2).jpg"/>
+<link rel="preload" as="image" href="../kyrgyz-wedding/assets/photos/DSC05923%20(2).jpg"/>
+<link rel="preload" as="image" href="../kyrgyz-wedding/assets/photos/DSC05948%20(1).jpg"/>
+<link rel="stylesheet" href="css/styles.css"/>
+<link rel="stylesheet" href="css/language-selector.css"/>
+<link rel="stylesheet" href="css/horizontal-gallery-scroll.css"/>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden relative">
+<!-- Layer 1: Language Selector -->
+<div class="layer layer-language language-selector" id="languageSelector" aria-live="polite">
+    <div class="language-selector-inner">
+        <h2 class="lang-title" id="lang-title">ТИЛДИ ТАНДАҢЫЗ</h2>
+        <p class="lang-subtitle" id="lang-subtitle">ВЫБЕРИТЕ ЯЗЫК</p>
+
+        <div class="language-grid">
+            <button class="lang-btn" data-lang="kg" aria-label="Выбрать кыргызский язык">
+                КЫРГЫЗ ТИЛИ
+            </button>
+            <button class="lang-btn" data-lang="ru" aria-label="Выбрать русский язык">
+                РУССКИЙ ЯЗЫК
+            </button>
+        </div>
+
+        <img class="lang-bottom-element" src="../kyrgyz-wedding/assets/element.png" alt="decorative element" />
+    </div>
+</div>
+
+<!-- Layer 2: envelope reveal -->
+<div class="layer layer-envelope envelope-overlay hidden" id="envelopeOverlay" aria-live="polite">
+    <div class="panel panel-top" data-panel="top"><div class="panel-content" data-kg="✦ Бакыт ✦" data-ru="✦ Счастье ✦">✦ Бакыт ✦</div></div>
+    <div class="panel panel-right" data-panel="right"><div class="panel-content" data-kg="✦ Сүйүү ✦" data-ru="✦ Любовь ✦">✦ Сүйүү ✦</div></div>
+    <div class="panel panel-bottom" data-panel="bottom"><div class="panel-content" data-kg="✦ Өнөр-адат ✦" data-ru="✦ Верность ✦">✦ Өнөр-адат ✦</div></div>
+    <div class="panel panel-left" data-panel="left"><div class="panel-content" data-kg="✦ Үмүт ✦" data-ru="✦ Надежда ✦">✦ Үмүт ✦</div></div>
+    <button class="seal" id="seal" aria-label="Конвертти ачуу" data-kg="Ачуу" data-ru="Открыть">
+        Э
+        <span class="seal-sub">&amp; К</span>
+    </button>
+</div>
+
+<!-- Layer 3: invitation content -->
+<div class="layer layer-content site-shell hidden" id="siteShell">
+<audio id="bg-music" loop="" preload="auto" src="../kyrgyz-wedding/assets/music/wedding-song.mp3?v=20260831-1"></audio>
+<!-- Main Content -->
+<div class="min-h-screen relative flex flex-col" id="main-content">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 px-container-padding-mobile md:px-container-padding-desktop h-20 flex justify-end items-center">
+<div class="flex items-center gap-4 text-primary">
+<button class="hover:text-primary-fixed-variant transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50 font-label-caps" id="lang-toggle">
+                    RU
+                </button>
+<button class="hover:text-primary-fixed-variant transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50" id="audio-toggle">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 px-container-padding-mobile md:px-container-padding-desktop overflow-hidden">
+<!-- Decorative mountain layers -->
+<img class="asset-mountain back" src="../kyrgyz-wedding/assets/mountains/mountains-back.svg" alt="decorative mountains"/>
+<img class="asset-mountain mid" src="../kyrgyz-wedding/assets/mountains/mountains-middle.svg" alt="decorative mountains"/>
+<img class="asset-mountain front" src="../kyrgyz-wedding/assets/mountains/mountains-front.svg" alt="decorative mountains"/>
+<div class="relative z-10 text-center max-w-3xl mx-auto mt-12 flex flex-col items-center">
+<p class="font-label-caps text-secondary tracking-[0.3em] mb-6 uppercase text-glow" data-kg="Сизди үйлөнүү тоюбузга чакырабыз" data-ru="Приглашаем вас на нашу свадьбу" id="hero-greeting">Сизди үйлөнүү тоюбузга чакырабыз</p>
+<img src="../kyrgyz-wedding/assets/ornaments/oyu-divider.svg" alt="ornament divider" class="w-56 h-auto mb-6 opacity-90"/>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8 leading-tight hero-title text-shimmer">
+                    <span class="hero-word">Эрланбек</span>
+                    <span class="title-ornament text-glow">&amp;</span>
+                    <span class="hero-word">Карлыгач</span>
+                </h1>
+<div class="w-24 h-px bg-secondary opacity-50 mb-8"></div>
+<div class="flex flex-col md:flex-row gap-8 items-center justify-center text-center font-body-md text-on-surface-variant">
+<div class="flex flex-col items-center">
+<span class="font-title-sm text-primary mb-1" data-kg="Күнү" data-ru="Дата">Күнү</span>
+<span class="" data-kg="19 Сентябрь 2026" data-ru="19 Сентября 2026">19 Сентябрь 2026</span>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 flex flex-col items-center animate-bounce opacity-70">
+<span class="font-label-caps text-xs text-on-surface-variant mb-2" data-kg="Төмөн" data-ru="Вниз">Төмөн</span>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+</section>
+<!-- Countdown Section -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop bg-surface-container-low flex justify-center">
+<div class="w-full max-w-4xl p-8 md:p-12 gold-border bg-surface relative overflow-hidden reveal-on-scroll rounded-sm shadow-sm">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50"></div>
+<h2 class="font-headline-md-mobile md:font-headline-md text-center text-primary mb-10" data-kg="Күткөн Күнгө Чейин" data-ru="До долгожданного дня">Күткөн Күнгө Чейин</h2>
+<div class="flex justify-center gap-4 md:gap-12" id="countdown">
+<div class="flex flex-col items-center">
+<span class="font-display-lg-mobile md:font-display-lg text-secondary countdown-value" id="cd-days">13</span>
+<span class="font-label-caps text-on-surface-variant mt-2" data-kg="Күн" data-ru="Дней">Күн</span>
+</div>
+<span class="font-display-lg-mobile md:font-display-lg text-outline-variant pt-2">:</span>
+<div class="flex flex-col items-center">
+<span class="font-display-lg-mobile md:font-display-lg text-secondary countdown-value" id="cd-hours">02</span>
+<span class="font-label-caps text-on-surface-variant mt-2" data-kg="Саат" data-ru="Часов">Саат</span>
+</div>
+<span class="font-display-lg-mobile md:font-display-lg text-outline-variant pt-2">:</span>
+<div class="flex flex-col items-center">
+<span class="font-display-lg-mobile md:font-display-lg text-secondary countdown-value" id="cd-mins">51</span>
+<span class="font-label-caps text-on-surface-variant mt-2" data-kg="Мүнөт" data-ru="Минут">Мүнөт</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Story / Image Section with Bento Grid -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop">
+<div class="max-w-7xl mx-auto flex flex-col items-center reveal-on-scroll">
+<div class="flex items-center justify-center gap-4 mb-4">
+<img class="section-divider" src="../kyrgyz-wedding/assets/ornaments/oyu-divider.svg" alt="ornament divider"/>
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<img class="section-divider" src="../kyrgyz-wedding/assets/ornaments/oyu-divider.svg" alt="ornament divider"/>
+</div>
+<h2 class="font-headline-md-mobile md:font-headline-md text-primary mb-12 text-center" data-kg="Биздин Баян" data-ru="Наша История">Биздин Баян</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full items-center">
+<div class="md:col-span-8">
+<div class="story-quote-photo reveal-on-scroll">
+<img alt="Kyrgyz wedding couple" src="../kyrgyz-wedding/assets/photos/DSC05948%20(1).jpg"/>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-high p-8 flex flex-col justify-center items-center text-center h-full rounded-sm gold-border">
+<p class="font-body-md text-on-surface italic text-lg leading-relaxed" data-kg='"Сүйүү — бул бири-бирин кароо эмес, бир багытты кароо."' data-ru='"Любить — это не смотреть друг на друга, а смотреть в одном направлении."'>
+                                "Сүйүү — бул бири-бирин кароо эмес, бир багытты кароо."
+                            </p>
+<div class="w-12 h-px bg-secondary my-4 opacity-50"></div>
+<span class="font-label-caps text-primary tracking-widest" data-kg="— Антуан де Сент-Экзюпери" data-ru="— Антуан де Сент-Экзюпери">— Антуан де Сент-Экзюпери</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Program / Timeline -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop bg-surface-container-low relative">
+<div class="max-w-3xl mx-auto relative z-10 reveal-on-scroll section-frame gold-border p-6 md:p-10 rounded-sm">
+<div class="flex items-center justify-center gap-4 mb-10">
+<img src="../kyrgyz-wedding/assets/ornaments/oyu-top.svg" alt="ornament top" class="w-28 h-auto opacity-90"/>
+<h2 class="font-headline-md-mobile md:font-headline-md text-primary text-center" data-kg="Программа" data-ru="Программа">Программа</h2>
+<img src="../kyrgyz-wedding/assets/ornaments/oyu-bottom.svg" alt="ornament bottom" class="w-28 h-auto opacity-90"/>
+</div>
+<div class="flex flex-col gap-12 relative before:absolute before:inset-y-0 before:left-[19px] md:before:left-1/2 before:w-px before:bg-outline-variant/50">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col mb-4 md:mb-0 pl-12 md:pl-0">
+<h3 class="font-title-sm text-primary" data-kg="Конокторду тосуу" data-ru="Сбор гостей">Конокторду тосуу</h3>
+<p class="font-body-md text-on-surface-variant mt-1 text-sm" data-kg="Жагымдуу музыка, фуршет жана сүрөткө түшүү" data-ru="Приятная музыка, фуршет и фотосессия">Жагымдуу музыка, фуршет жана сүрөткө түшүү</p>
+</div>
+<div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface gold-border flex items-center justify-center z-10 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+</div>
+<div class="md:w-1/2 md:pl-12 pl-12">
+<span class="font-headline-md-mobile text-primary-container">17:30</span>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col mb-4 md:mb-0 pl-12 md:pl-0 md:order-1 order-3">
+<span class="font-headline-md-mobile text-primary-container">18:30</span>
+</div>
+<div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface gold-border flex items-center justify-center z-10 shadow-sm group-hover:scale-110 transition-transform md:order-2 order-2">
+<span class="material-symbols-outlined text-secondary text-sm">restaurant</span>
+</div>
+<div class="md:w-1/2 md:pl-12 pl-12 md:order-3 order-1 mb-4 md:mb-0">
+<h3 class="font-title-sm text-primary" data-kg="Негизги бөлүк" data-ru="Основная часть">Негизги бөлүк</h3>
+<p class="font-body-md text-on-surface-variant mt-1 text-sm" data-kg="Тойдун башталышы, куттуктоолор жана сый тамак" data-ru="Начало торжества, поздравления и банкет">Тойдун башталышы, куттуктоолор жана сый тамак</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col mb-4 md:mb-0 pl-12 md:pl-0">
+<h3 class="font-title-sm text-primary" data-kg="Бий жана Көңүл ачуу" data-ru="Танцы и развлечения">Бий жана Көңүл ачуу</h3>
+<p class="font-body-md text-on-surface-variant mt-1 text-sm" data-kg="Оюн-зоок программасы жана бий аянты" data-ru="Шоу-программа и танцпол">Оюн-зоок программасы жана бий аянты</p>
+</div>
+<div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface gold-border flex items-center justify-center z-10 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-sm">celebration</span>
+</div>
+<div class="md:w-1/2 md:pl-12 pl-12">
+<span class="font-headline-md-mobile text-primary-container">20:00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Venue / Details -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop">
+<div class="max-w-5xl mx-auto flex flex-col items-center reveal-on-scroll">
+<div class="flex items-center justify-center gap-4 mb-8">
+<img class="section-divider" src="../kyrgyz-wedding/assets/ornaments/oyu-floral.svg" alt="floral ornament"/>
+<h2 class="font-headline-md-mobile md:font-headline-md text-primary text-center" data-kg="Маалымат" data-ru="Информация">Маалымат</h2>
+<img class="section-divider" src="../kyrgyz-wedding/assets/ornaments/oyu-floral.svg" alt="floral ornament"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div class="bg-surface-container-lowest p-8 gold-border shadow-sm flex flex-col items-center text-center rounded-sm section-frame">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl">event</span>
+</div>
+<h3 class="font-title-sm text-primary mb-2" data-kg="Качан?" data-ru="Когда?">Качан?</h3>
+<p class="font-body-md text-on-surface mb-6" data-kg="19 Сентябрь 2026&lt;br/&gt;Саат 17:30" data-ru="19 Сентября 2026&lt;br/&gt;В 17:30">19 Сентябрь 2026<br/>Саат 17:30</p>
+<div class="mini-calendar" aria-label="Wedding date calendar">
+  <p class="mini-calendar-month" id="mini-calendar-month">Сентябрь 2026</p>
+  <div class="mini-calendar-grid" id="mini-calendar-grid"></div>
+</div>
+<button class="mt-auto px-6 py-2 bg-surface border border-outline-variant text-on-surface font-label-caps uppercase tracking-widest hover:bg-surface-variant transition-colors rounded-sm flex items-center gap-2" id="btn-calendar">
+<span class="material-symbols-outlined text-sm">edit_calendar</span>
+<span class="" data-kg="Календарга кошуу" data-ru="Добавить в календарь">Календарга кошуу</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-8 gold-border shadow-sm flex flex-col items-center text-center rounded-sm">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+</div>
+<h3 class="font-title-sm text-primary mb-2" data-kg="Кайда?" data-ru="Где?">Кайда?</h3>
+<p class="font-body-md text-on-surface mb-6" data-kg='Ресторан "Аяна"&lt;br/&gt;4J3H+7HJ, Кулунду' data-ru='Ресторан "Аяна"&lt;br/&gt;4J3H+7HJ, Кулунду'>Ресторан "Аяна"<br/>4J3H+7HJ, Кулунду</p>
+<div class="venue-map-preview mb-6" aria-label="Предпросмотр карты места проведения">
+  <div class="venue-map-path"></div>
+  <div class="venue-map-pin-shadow"></div>
+  <div class="venue-map-pin">
+    <span class="material-symbols-outlined">location_on</span>
+  </div>
+</div>
+<button id="open-venue-map-btn" class="mt-auto px-6 py-2 bg-primary text-on-primary font-label-caps uppercase tracking-widest hover:bg-primary-container transition-colors rounded-sm flex items-center justify-center gap-2 w-full" type="button">
+<span class="material-symbols-outlined text-sm">map</span>
+<span class="" data-kg="Картаны ачуу" data-ru="Открыть карту">Картаны ачуу</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Photo Gallery -->
+<section class="bg-surface-container-low px-container-padding-mobile md:px-container-padding-desktop" id="gallery-ribbon">
+    <div class="max-w-6xl mx-auto flex flex-col items-center reveal-on-scroll pt-16 pb-4">
+        <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-px bg-secondary opacity-50"></div>
+            <div class="w-8 h-8 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">favorite</span>
+            </div>
+            <div class="w-12 h-px bg-secondary opacity-50"></div>
+        </div>
+        <h2 class="font-headline-md-mobile md:font-headline-md text-primary text-center" data-kg="Биздин сүйүү тарыхыбыз" data-ru="История нашей любви">Биздин сүйүү тарыхыбыз</h2>
+    </div>
+    <div class="gallery-sticky">
+        <div class="gallery-viewport">
+            <div class="gallery-track" id="gallery-track"></div>
+        </div>
+    </div>
+</section>
+<!-- Gallery Blurb -->
+<section class="gallery-blurb py-8 px-container-padding-mobile md:px-container-padding-desktop">
+  <div class="max-w-4xl mx-auto text-center reveal-on-scroll">
+    <p class="font-headline-md-mobile md:font-headline-md text-primary mb-4" data-kg="Биз бул өзгөчө күндү сиздер менен бирге өткөргөнүбүзгө кубанычта болобуз." data-ru="Мы будем рады разделить его с вами.">Биз бул өзгөчө күндү сиздер менен бирге өткөргөнүбүзгө кубанычта болобуз. <span class="sr-only">/</span> Мы будем рады разделить его с вами.</p>
+
+    <h3 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 leading-tight" data-kg="Сиздерди биздин үйлөнүү тоюбузга чакырабыз." data-ru="Приглашаем вас на нашу свадьбу.">Сиздерди биздин үйлөнүү тоюбузга чакырабыз. <br class="hidden sm:block"/> Приглашаем вас на нашу свадьбу.</h3>
+
+    <p class="font-body-md text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto italic" data-kg="Бул күн жашообуздагы эң кооз жаңы барактын башталышы болсун." data-ru="Пусть этот день станет началом самой красивой главы нашей жизни.">Бул күн жашообуздагы эң кооз жаңы барактын башталышы болсун. <span class="sr-only">/</span> Пусть этот день станет началом самой красивой главы нашей жизни.</p>
+  </div>
+</section>
+<!-- RSVP -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop bg-surface-container-high relative overflow-hidden rsvp-tight">
+<div class="max-w-2xl mx-auto relative z-10 flex flex-col items-center text-center reveal-on-scroll bg-surface p-10 md:p-16 gold-border shadow-lg rounded-sm">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">mail</span>
+<h2 class="font-headline-md-mobile md:font-headline-md text-primary mb-4" data-kg="Катышууңузду Тастыктаңыз" data-ru="Подтвердите участие">Катышууңузду Тастыктаңыз</h2>
+<p class="font-body-md text-on-surface-variant mb-10" data-kg="Сизди кубанычыбызды тең бөлүшүүгө чакырабыз.&lt;br/&gt;Сураныч, 1-Сентябрга дейін жооп бериңиз." data-ru="Приглашаем вас разделить нашу радость.&lt;br/&gt;Пожалуйста, ответьте до 1 Сентября.">
+                    Сизди кубанычыбызды тең бөлүшүүгө чакырабыз.<br/>Сураныч, 1-Сентябрга дейін жооп бериңиз.
+                </p>
+
+<div class="rsvp-form-wrap">
+  <form id="rsvp-form" class="rsvp-form">
+    <div class="rsvp-field">
+      <label for="guestName" data-kg="Аты-жөнүңүз" data-ru="Ваше имя и фамилия">Аты-жөнүңүз</label>
+      <input id="guestName" name="guestName" type="text" data-kg-placeholder="Мисалы: Асан Үсөнов" data-ru-placeholder="Например: Иван Иванов" placeholder="Мисалы: Асан Үсөнов" required />
+    </div>
+
+    <div class="rsvp-field">
+      <label data-kg="Тойго келе аласызбы?" data-ru="Сможете ли вы прийти на свадьбу?">Тойго келе аласызбы?</label>
+      <div class="rsvp-choice-list">
+        <label class="rsvp-choice-item">
+          <input type="radio" name="attendance" value="yes" checked />
+          <span data-kg="Ооба, сөзсүз барам!" data-ru="Да, обязательно приду!">Ооба, сөзсүз барам!</span>
+        </label>
+        <label class="rsvp-choice-item">
+          <input type="radio" name="attendance" value="no" />
+          <span data-kg="Тилекке каршы, бара албайм" data-ru="К сожалению, не смогу прийти">Тилекке каршы, бара албайм</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="rsvp-field">
+      <label data-kg="Кимдин коногусуз?" data-ru="Чей вы гость?">Кимдин коногусуз?</label>
+      <div class="rsvp-choice-list">
+        <label class="rsvp-choice-item">
+          <input type="radio" name="guestWith" value="erlanbek" checked />
+          <span data-kg="Эрланбек" data-ru="Эрланбек">Эрланбек</span>
+        </label>
+        <label class="rsvp-choice-item">
+          <input type="radio" name="guestWith" value="karlygach" />
+          <span data-kg="Карлыгач" data-ru="Карлыгач">Карлыгач</span>
+        </label>
+      </div>
+    </div>
+
+    <button type="submit" class="rsvp-submit" data-kg="Жоопту жөнөтүү" data-ru="Отправить ответ">Жоопту жөнөтүү</button>
+  </form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-12 border-t border-outline-variant/50 flex flex-col items-center gap-6 px-6 mt-auto">
+<div class="flex items-center justify-center gap-4 mb-2">
+<img src="../kyrgyz-wedding/assets/logo/tunduk.svg" alt="tunduk symbol" class="w-12 h-12 opacity-90"/>
+</div>
+</footer>
+</div>
+</div>
+
+<div id="map-choice-modal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/30 backdrop-blur-[2px]">
+    <div class="w-[90%] max-w-sm rounded-sm bg-surface p-6 gold-border shadow-xl">
+        <p class="font-title-sm text-primary text-center mb-5" data-kg="Картаны кайсыл канал аркылуу ачкыңыз келет?" data-ru="Через какое приложение открыть карту?">Картаны кайсыл канал аркылуу ачкыңыз келет?</p>
+        <div class="flex flex-col gap-3">
+            <button data-map-choice="google" class="px-4 py-3 rounded-sm border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant transition-colors font-label-caps uppercase tracking-widest" type="button">Google Maps</button>
+            <button data-map-choice="2gis" class="px-4 py-3 rounded-sm border border-outline-variant bg-surface text-on-surface hover:bg-surface-variant transition-colors font-label-caps uppercase tracking-widest" type="button">2GIS</button>
+        </div>
+    </div>
+</div>
+
+<!--
+  Порядок подключения важен (обычные скрипты, не модули — чтобы не
+  ловить CORS при открытии файла напрямую, без сервера):
+  1. state.js     — общее хранилище window.WeddingSite
+  2. calendar.js  — определяет site.renderMiniCalendar (нужен language.js)
+  3. language.js  — определяет site.setLanguage (нужен envelope.js)
+  4. envelope.js  — решает, какой экран показать при загрузке, и слушает
+                     событие "wedding:language-selected"
+  5. остальные — независимые виджеты страницы
+-->
+<script src="js/state.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/language.js"></script>
+<script src="js/envelope.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/rsvp.js"></script>
+<script src="js/venue-map.js"></script>
+<script src="js/ics.js"></script>
+</body>
+</html>

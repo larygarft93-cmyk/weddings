@@ -1,0 +1,129 @@
+/* === Language Selector Layer === */
+.layer-language {
+    z-index: 100;
+    background: #fbfaee;
+}
+
+.language-selector-inner {
+    width: min(90vw, 440px);
+    max-width: 440px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0 auto;
+    animation: fadeInScale 0.8s ease both;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lang-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.1rem, 1vw + 0.9rem, 1.8rem);
+    font-weight: 600;
+    color: #570013;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.lang-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.72rem, 0.55vw + 0.62rem, 1rem);
+    font-weight: 400;
+    color: #570013;
+    letter-spacing: 0.05em;
+    margin-bottom: clamp(1rem, 2vw, 1.8rem);
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.language-grid {
+    width: min(100%, 320px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1vw, 0.9rem);
+    margin: 0 auto;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #f5f4e8;
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    padding: clamp(0.75rem, 1vw + 0.45rem, 1rem) clamp(1rem, 1.8vw, 1.4rem);
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 0.65vw + 0.65rem, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #1b1c15;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    background: #570013;
+    color: #ffffff;
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+.lang-btn:active {
+    transform: scale(0.97);
+}
+
+.lang-btn:active {
+    transform: scale(0.97);
+}
+
+.lang-bottom-element {
+    display: block;
+    width: clamp(160px, 38vw, 320px);
+    max-width: 320px;
+    height: auto;
+    margin: clamp(1rem, 3vw, 1.5rem) auto 0;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 480px) {
+    .language-selector-inner {
+        padding: 0 0.5rem;
+    }
+
+    .language-grid {
+        width: min(100%, 280px);
+    }
+
+    .lang-btn {
+        padding: 12px 16px;
+        font-size: 0.82rem;
+    }
+
+    .lang-bottom-element {
+        width: min(72vw, 220px);
+        margin-top: 1rem;
+    }
+}

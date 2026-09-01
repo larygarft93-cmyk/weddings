@@ -1,0 +1,58 @@
+:root {
+  --color-burgundy-deep: #5B121A;
+  --color-wine-dark: #3D0B10;
+  --color-cream-warm: #FBF8F3;
+  --color-ivory: #FFFDF9;
+  --color-beige-soft: #F3EDE2;
+  --color-gold-muted: #D4AF37;
+  --color-gold-brushed: #C5A059;
+  --color-brown-dark: #2C1A14;
+  --color-turquoise-subtle: #2A7B88;
+  --color-terracotta-muted: #C86D51;
+  --bg-primary: var(--color-cream-warm);
+  --bg-surface: var(--color-ivory);
+  --text-main: var(--color-brown-dark);
+  --accent-primary: var(--color-burgundy-deep);
+  --accent-gold: var(--color-gold-muted);
+  --border-color: rgba(91, 18, 26, 0.15);
+  --font-serif-luxury: "Cormorant Garamond", "Cinzel", Georgia, serif;
+  --font-sans-clean: "Montserrat", "Inter", -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1E080B;
+  --bg-surface: var(--color-wine-dark);
+  --text-main: var(--color-cream-warm);
+  --accent-primary: var(--color-gold-muted);
+  --accent-gold: #E5C158;
+  --border-color: rgba(212, 175, 55, 0.25);
+}
+
+.svg-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.tunduk-spin {
+  animation: tundukRotate 32s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes tundukRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bg-paper-texture {
+  background-color: var(--color-cream-warm);
+  background-image: radial-gradient(rgba(44, 26, 20, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-gold-subtle {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA820A 50%, #C5A059 100%);
+}
