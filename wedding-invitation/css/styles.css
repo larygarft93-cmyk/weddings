@@ -355,17 +355,28 @@ body::-webkit-scrollbar {
     }
 }
 
-/* Keep hero names on one line and scale on very small screens */
+/* Keep hero names centered and readable on phones without forcing an overflowing single line */
 @media (max-width: 420px) {
     .hero-title {
-        display: inline-flex;
-        gap: 0.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.5rem;
         align-items: center;
         justify-content: center;
-        white-space: nowrap; /* prevent stacking */
-        font-size: clamp(1.4rem, 6.5vw, 2.2rem) !important;
+        white-space: normal;
+        word-break: keep-all;
+        line-height: 1.15;
+        font-size: clamp(1.55rem, 7vw, 2.3rem) !important;
     }
-    .title-ornament { margin: 0 0.25rem; }
+    .hero-word {
+        display: inline-block;
+    }
+    .title-ornament {
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Make hero text bolder and centered by default */
